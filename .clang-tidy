@@ -1,0 +1,220 @@
+---
+#Checks:  'clang-diagnostic-*,clang-analyzer-*,-*,clang-diagnostic-*,clang-analyzer-*,bugprone*,cppcoreguidelines-*,misc-*,readability-*'
+Checks: '-*,readability-identifier-naming'
+#WarningsAsErrors: 'clang-diagnostic-*,clang-analyzer-*,-*,clang-diagnostic-*,clang-analyzer-*,bugprone-*,cppcoreguidelines-*,misc-*,readability-*'
+HeaderFilterRegex: '*.h'
+AnalyzeTemporaryDtors: false
+FormatStyle:     file
+CheckOptions:    
+  - key:             cppcoreguidelines-no-malloc.Allocations
+    value:           '::malloc;::calloc'
+  - key:             cppcoreguidelines-no-malloc.Deallocations
+    value:           '::free'
+  - key:             cppcoreguidelines-no-malloc.Reallocations
+    value:           '::realloc'
+  - key:             cppcoreguidelines-pro-bounds-constant-array-index.GslHeader
+    value:           ''
+  - key:             cppcoreguidelines-pro-bounds-constant-array-index.IncludeStyle
+    value:           '0'
+  - key:             cppcoreguidelines-pro-type-member-init.IgnoreArrays
+    value:           '0'
+  - key:             cppcoreguidelines-special-member-functions.AllowMissingMoveFunctions
+    value:           '0'
+  - key:             cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor
+    value:           '0'
+  - key:             google-build-namespaces.HeaderFileExtensions
+    value:           h,hh,hpp,hxx
+  - key:             google-global-names-in-headers.HeaderFileExtensions
+    value:           h,hh,hpp,hxx
+  - key:             misc-argument-comment.StrictMode
+    value:           '0'
+  - key:             misc-assert-side-effect.AssertMacros
+    value:           assert
+  - key:             misc-assert-side-effect.CheckFunctionCalls
+    value:           '0'
+  - key:             misc-dangling-handle.HandleClasses
+    value:           'std::basic_string_view;std::experimental::basic_string_view'
+  - key:             misc-definitions-in-headers.HeaderFileExtensions
+    value:           ',h,hh,hpp,hxx'
+  - key:             misc-definitions-in-headers.UseHeaderFileExtension
+    value:           '1'
+  - key:             misc-misplaced-widening-cast.CheckImplicitCasts
+    value:           '0'
+  - key:             misc-move-constructor-init.IncludeStyle
+    value:           llvm
+  - key:             misc-sizeof-expression.WarnOnSizeOfCompareToConstant
+    value:           '1'
+  - key:             misc-sizeof-expression.WarnOnSizeOfConstant
+    value:           '1'
+  - key:             misc-sizeof-expression.WarnOnSizeOfThis
+    value:           '1'
+  - key:             misc-string-constructor.LargeLengthThreshold
+    value:           '8388608'
+  - key:             misc-string-constructor.WarnOnLargeLength
+    value:           '1'
+  - key:             misc-suspicious-enum-usage.StrictMode
+    value:           '0'
+  - key:             misc-suspicious-missing-comma.MaxConcatenatedTokens
+    value:           '5'
+  - key:             misc-suspicious-missing-comma.RatioThreshold
+    value:           '0.200000'
+  - key:             misc-suspicious-missing-comma.SizeThreshold
+    value:           '5'
+  - key:             misc-suspicious-string-compare.StringCompareLikeFunctions
+    value:           ''
+  - key:             misc-suspicious-string-compare.WarnOnImplicitComparison
+    value:           '1'
+  - key:             misc-suspicious-string-compare.WarnOnLogicalNotComparison
+    value:           '0'
+  - key:             misc-throw-by-value-catch-by-reference.CheckThrowTemporaries
+    value:           '1'
+  - key:             readability-braces-around-statements.ShortStatementLines
+    value:           '0'
+  - key:             readability-function-size.BranchThreshold
+    value:           '5'
+  - key:             readability-function-size.LineThreshold
+    value:           '50'
+  - key:             readability-function-size.NestingThreshold
+    value:           '4294967295'
+  - key:             readability-function-size.ParameterThreshold
+    value:           '5'
+  - key:             readability-function-size.StatementThreshold
+    value:           '50'
+#fillout identifier-naming
+#not all of these work quite as expected
+#  - key:             readability-identifier-naming.AbstractClassCase
+#    value:           CamelCase
+#  - key:             readability-identifier-naming.AbstractClassPrefix
+#    value:           'A' 
+  - key:             readability-identifier-naming.ClassCase
+    value:           CamelCase
+#  - key:             readability-identifier-naming.ClassPrefix
+#    value:           'C' 
+#  - key:             readability-identifier-naming.ClassConstantCase
+#    value:           CamelCase 
+#  - key:             readability-identifier-naming.ClassConstantPrefix
+#    value:           'k' 
+  - key:             readability-identifier-naming.ClassMemberCase
+    value:           camelBack
+  - key:             readability-identifier-naming.ClassMethodCase
+    value:           camelBack 
+#  - key:             readability-identifier-naming.ConstantCase
+#    value:           UPPER_CASE 
+#  - key:             readability-identifier-naming.ConstantSuffix
+#    value:           '_CST' 
+#  - key:             readability-identifier-naming.ConstexprFunctionCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.ConstexprMethodCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.ConstexprVariableCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.EnumCase
+#    value:           CamelCase 
+#  - key:             readability-identifier-naming.EnumPrefix
+#    value:           'E' 
+#  - key:             readability-identifier-naming.EnumConstantCase
+#    value:           UPPER_CASE 
+#  - key:             readability-identifier-naming.FunctionCase
+#    value:           camelBack 
+#  - key:             readability-identifier-naming.GlobalConstantCase
+#    value:           UPPER_CASE 
+#  - key:             readability-identifier-naming.GlobalFunctionCase
+#    value:           CamelCase 
+#  - key:             readability-identifier-naming.GlobalVariableCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.GlobalVariablePrefix
+#    value:           'g_' 
+#  - key:             readability-identifier-naming.InlineNamespaceCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.LocalConstantCase
+#    value:           CamelCase 
+#  - key:             readability-identifier-naming.LocalConstantPrefix
+#    value:           'k' 
+  - key:             readability-identifier-naming.LocalVariableCase
+    value:           camelBack 
+  - key:             readability-identifier-naming.MemberCase
+    value:           camelBack
+  - key:             readability-identifier-naming.MemberPrefix
+    value:           '_' 
+#  - key:             readability-identifier-naming.ConstantMemberCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.PrivateMemberPrefix
+#    value:           '__' 
+#  - key:             readability-identifier-naming.ProtectedMemberPrefix
+#    value:           '_' 
+#  - key:             readability-identifier-naming.PublicMemberCase
+#    value:           lower_case
+
+# this works, but ClassMethodCase doesn't seem to 
+  - key:             readability-identifier-naming.MethodCase
+    value:           camelBack 
+#  - key:             readability-identifier-naming.PrivateMethodPrefix
+#    value:           '__' 
+#  - key:             readability-identifier-naming.ProtectedMethodPrefix
+#    value:           '_' 
+  - key:             readability-identifier-naming.NamespaceCase
+    value:           lower_case 
+  - key:             readability-identifier-naming.ParameterCase
+    value:           camelBack 
+#  - key:             readability-identifier-naming.ParameterPrefix
+#    value:           'a_' 
+  - key:             readability-identifier-naming.ConstantParameterCase
+    value:           camelBack 
+#  - key:             readability-identifier-naming.ConstantParameterPrefix
+#    value:           'i_' 
+#  - key:             readability-identifier-naming.ParameterPackCase
+#    value:           camelBack 
+#  - key:             readability-identifier-naming.PureFunctionCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.PureMethodCase
+#    value:           camelBack 
+#  - key:             readability-identifier-naming.StaticConstantCase
+#    value:           UPPER_CASE 
+#  - key:             readability-identifier-naming.StaticVariableCase
+#    value:           camelBack 
+#  - key:             readability-identifier-naming.StaticVariablePrefix
+#    value:           's_' 
+  - key:             readability-identifier-naming.StructCase
+    value:           CamelCase 
+#  - key:             readability-identifier-naming.TemplateParameterCase
+#    value:           UPPER_CASE 
+#  - key:             readability-identifier-naming.TemplateTemplateParameterCase
+#    value:           CamelCase 
+#  - key:             readability-identifier-naming.TemplateUsingCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.TemplateUsingPrefix
+#    value:           'u_' 
+#  - key:             readability-identifier-naming.TypeTemplateParameterCase
+#    value:           camelBack 
+#  - key:             readability-identifier-naming.TypeTemplateParameterSuffix
+#    value:           '_t' 
+#  - key:             readability-identifier-naming.TypedefCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.TypedefSuffix
+#    value:           '_t' 
+#  - key:             readability-identifier-naming.UnionCase
+#    value:           CamelCase 
+#  - key:             readability-identifier-naming.UnionPrefix
+#    value:           'U' 
+#  - key:             readability-identifier-naming.UsingCase
+#    value:           lower_case 
+#  - key:             readability-identifier-naming.ValueTemplateParameterCase
+#    value:           camelBack 
+  - key:             readability-identifier-naming.VariableCase
+    value:           camelBack 
+#  - key:             readability-identifier-naming.VirtualMethodCase
+#    value:           UPPER_CASE 
+#  - key:             readability-identifier-naming.VirtualMethodPrefix
+#    value:           'v_' 
+#  - key:             readability-identifier-naming.IgnoreFailedSplit
+#    value:           0
+#end readabiliy options	
+  - key:             readability-implicit-bool-cast.AllowConditionalIntegerCasts
+    value:           '0'
+  - key:             readability-implicit-bool-cast.AllowConditionalPointerCasts
+    value:           '0'
+  - key:             readability-simplify-boolean-expr.ChainedConditionalAssignment
+    value:           '0'
+  - key:             readability-simplify-boolean-expr.ChainedConditionalReturn
+    value:           '0'
+

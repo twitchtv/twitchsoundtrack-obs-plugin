@@ -1,0 +1,23 @@
+#this is the top level editor config
+root = true
+
+[*.{c,h,cpp,hpp}]
+trim_trailing_whitespace = true
+end_of_line=lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+
+[*.cmake]
+trim_trailing_whitespace = true
+end_of_line=lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+
+[*.py]
+trim_trailing_whitespace = true
+end_of_line=lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4

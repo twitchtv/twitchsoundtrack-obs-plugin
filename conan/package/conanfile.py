@@ -1,3 +1,7 @@
+
+# Copyright Twitch Interactive, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: GPL-2.0
+
 from conans import ConanFile, CMake, tools
 import os
 

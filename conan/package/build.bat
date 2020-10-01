@@ -1,5 +1,8 @@
 @echo off
 
+rem Copyright Twitch Interactive, Inc. or its affiliates. All Rights Reserved.
+rem SPDX-License-Identifier: GPL-2.0
+
 if exist build rmdir /s /q build
 if exist debug rmdir /s /q debug
 if exist release rmdir /s /q release

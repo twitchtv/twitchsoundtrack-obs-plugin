@@ -1,4 +1,7 @@
 
+// Copyright Twitch Interactive, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: GPL-2.0
+
 #define TWITCH_DEBUG_RAWDATA 0
 #define TWITCH_DEBUG_TIMESTAMPS 0
 

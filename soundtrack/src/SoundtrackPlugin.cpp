@@ -1,3 +1,7 @@
+
+// Copyright Twitch Interactive, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: GPL-2.0
+
 #include <obs-frontend-api.h>
 #include <obs-module.h>
 

@@ -1,3 +1,6 @@
+// Copyright Twitch Interactive, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: GPL-2.0
+
 #pragma once
 
 namespace Twitch::Audio {

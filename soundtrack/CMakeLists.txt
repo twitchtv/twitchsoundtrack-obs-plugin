@@ -6,6 +6,7 @@ target_sources(soundtrack-plugin PRIVATE
   include/Util.h
   include/LockFreeList.h
   include/OBSCallback.h
+  include/SoundtrackPluginData.h
 )
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)

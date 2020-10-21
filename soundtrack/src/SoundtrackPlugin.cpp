@@ -6,6 +6,7 @@
 #include <obs-module.h>
 
 #include "OBSCallback.h"
+#include "SoundtrackPluginData.h"
 #include "Util.h"
 #include "obs-source.h"
 #include <util/config-file.h>
@@ -39,8 +40,12 @@ bool obs_module_load(void)
                 [](void *p, obs_source_t *source) {
                     auto id = obs_source_get_id(source);
                     if(strcmp(id, "soundtrack_source") == 0) {
-                        *reinterpret_cast<bool *>(p) = true;
-                        return false;
+                        auto *sourceData =
+                            reinterpret_cast<SoundtrackPluginData *>(obs_obj_get_data(source));
+                        if(sourceData->isConnected) {
+                            *reinterpret_cast<bool *>(p) = true;
+                            return false;
+                        }
                     }
                     return true;
                 },

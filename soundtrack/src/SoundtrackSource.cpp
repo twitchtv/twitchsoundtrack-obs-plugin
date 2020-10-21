@@ -21,25 +21,15 @@
 #include <algorithm>
 
 #include "LockFreeList.h"
+#include "SoundtrackPluginData.h"
 #include "Util.h"
 
 using namespace Twitch::Audio;
 
-struct SoundtrackPluginData {
-    bool initialized_thread;
-    pthread_t thread;
-    os_event_t *event;
-    obs_source_t *source;
-    os_event_t *dataReady;
-
-    std::unique_ptr<SoundtrackIPC> ipc;
-    Twitch::Utility::LockFreeList<TwitchAudioPacket> receiveQueue;
-};
-
 void initIpc(SoundtrackPluginData *pluginData)
 {
-    auto callbacks = IPCCallbacks{[pluginData]() {},
-        [pluginData]() {},
+    auto callbacks = IPCCallbacks{[pluginData]() { pluginData->isConnected = true; },
+        [pluginData]() { pluginData->isConnected = false; },
         [pluginData](TwitchAudioPacket packet) {
             pluginData->receiveQueue.push(packet);
             os_event_signal(pluginData->dataReady);
@@ -159,7 +149,7 @@ static void *soundtrackPluginThread(void *pdata)
 
 static const char *soundtrackGetName(void *)
 {
-    return "Soundtrack by Twitch Companion Audio Source";
+    return "VOD Audio for Soundtrack by Twitch";
 }
 
 static void soundtrackDestroy(void *data)

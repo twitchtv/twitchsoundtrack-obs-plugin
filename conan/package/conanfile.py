@@ -7,7 +7,7 @@ import os
 
 class TwitchSoundtrackOBSPlugin(ConanFile):
     name = "twitchsoundtrack-obs-plugin"
-    version = "0.1.8"
+    version = "0.1.11"
     license = "None"
     url = ""
     description = ""

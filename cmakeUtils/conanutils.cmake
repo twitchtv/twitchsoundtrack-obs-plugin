@@ -64,6 +64,7 @@ macro(run_conan)
         CMAKE_TARGETS
         NO_OUTPUT_DIRS
         BUILD missing
+        INSTALL_ARGS "-rconan-center"
         ${_keeprpath}
         BUILD_TYPE ${_buildtype}
         DEBUG_PROFILE ${_profile}

@@ -15,7 +15,7 @@ class SoundtrackPluginConan(ConanFile):
     # set build specific options here
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
-    requires = ("libsoundtrackutil/0.0.7",
+    requires = ("twitchtv-libsoundtrackutil/0.0.8",
     )
     # build_requires = "TODO: fill in build requirements if needed"
     #set package specific options here
